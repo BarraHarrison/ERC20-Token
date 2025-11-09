@@ -21,11 +21,10 @@ const token = new ethers.Contract(CONTRACT_ADDRESS, abi, wallet);
         const balance = await token.balanceOf(wallet.address);
         console.log("👛 Deployer Balance:", ethers.formatUnits(balance, 18));
 
-        // OPTIONAL: Transfer tokens to another Ganache account
-        const recipient = "0x..." // replace with another Ganache account
-        // const tx = await token.transfer(recipient, ethers.parseUnits("100", 18));
-        // await tx.wait();
-        // console.log(`✅ Sent 100 tokens to ${recipient}`);
+        const recipient = "0x"
+        const tx = await token.transfer(recipient, ethers.parseUnits("100", 18));
+        await tx.wait();
+        console.log(`✅ Sent 100 tokens to ${recipient}`);
 
     } catch (error) {
         console.error("❌ Interaction failed:", error);
