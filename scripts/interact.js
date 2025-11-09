@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const CONTRACT_ADDRESS = "0x2e5a232F74751D2111F5e31427d6341421d95768";
+const CONTRACT_ADDRESS = "0xB0be004936e36dE16405E50D8687f07878A25511";
 const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
