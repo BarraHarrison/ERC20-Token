@@ -14,7 +14,8 @@ const bytecode = fs.readFileSync("./build/contracts_MyToken_sol_MyToken.bin", "u
     console.log("🚀 Deploying contract...");
 
     const factory = new ethers.ContractFactory(abi, bytecode, wallet);
-    const contract = await factory.deploy();
+    const initialSupply = ethers.parseUnits("1000000", 18);
+    const contract = await factory.deploy(initialSupply);
     await contract.waitForDeployment();
 
     const address = await contract.getAddress();
