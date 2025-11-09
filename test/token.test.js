@@ -18,7 +18,9 @@ describe("MyToken (Local ERC20 Tests)", function () {
         const factory = new ethers.ContractFactory(abi, bytecode, wallet);
         const initialSupply = ethers.parseUnits("1000000", 18);
         token = await factory.deploy(initialSupply);
+
         await token.waitForDeployment();
+        await new Promise(resolve => setTimeout(resolve, 1000));
     });
 
     it("should have a name and symbol", async function () {
