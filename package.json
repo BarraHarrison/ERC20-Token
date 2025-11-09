@@ -26,5 +26,9 @@
     "dotenv": "^17.2.3",
     "ethers": "^6.15.0",
     "solc": "^0.8.30"
+  },
+  "devDependencies": {
+    "chai": "^6.2.0",
+    "mocha": "^11.7.5"
   }
 }
