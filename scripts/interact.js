@@ -21,7 +21,7 @@ const token = new ethers.Contract(CONTRACT_ADDRESS, abi, wallet);
         const balance = await token.balanceOf(wallet.address);
         console.log("👛 Deployer Balance:", ethers.formatUnits(balance, 18));
 
-        const recipient = "0x"
+        const recipient = "0xb159A89F0274810F5747ee4346B97449F3F8Fa13"
         const tx = await token.transfer(recipient, ethers.parseUnits("100", 18));
         await tx.wait();
         console.log(`✅ Sent 100 tokens to ${recipient}`);
